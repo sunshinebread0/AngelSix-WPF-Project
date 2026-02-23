@@ -68,33 +68,6 @@
 
             <!-- Work Centres -->
             <TextBlock  Text="Work Centres" Margin="0 0 0 10"/>
-            
-            <!-- CheckBox -->
-            <!--<Grid>
-
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-
-                --><!-- Column1 --><!--
-                <StackPanel Grid.Column="0" >
-                    <CheckBox Content="Weld" IsChecked="{Binding IsWeldChecked}"/>
-                    <CheckBox Content="Assembly" IsChecked="{Binding IsAssemblyChecked}"/>
-                    <CheckBox Content="Plasma" IsChecked="{Binding IsPlasmaChecked}"/>
-                    <CheckBox Content="Laser" IsChecked="{Binding IsLaserChecked}"/>
-                    <CheckBox Content="Purchase" IsChecked="{Binding IsPurchaseChecked}"/>
-                </StackPanel>
-
-                --><!-- Column2 --><!--
-                <StackPanel Grid.Column="1">
-                    <CheckBox Content="Lathe" IsChecked="{Binding IsLatheChecked}"/>
-                    <CheckBox Content="Drill" IsChecked="{Binding IsDrillChecked}"/>
-                    <CheckBox Content="Fold" IsChecked="{Binding IsFoldChecked}"/>
-                    <CheckBox Content="Roll" IsChecked="{Binding IsRollChecked}"/>
-                    <CheckBox Content="Saw" IsChecked="{Binding IsSawChecked}"/>
-                </StackPanel>
-            </Grid>-->
             <ItemsControl ItemsSource="{Binding WorkCenters}">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
@@ -107,6 +80,7 @@
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
+            
             <!-- Length -->
             <TextBlock  Text="Length" />
             <TextBox Text="{Binding LengthText}" Padding="2"/>
