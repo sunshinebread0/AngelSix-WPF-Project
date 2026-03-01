@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>Images\Logo\icon.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\Logo\logo-small.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Images\Logo\icon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\Logo\logo-small.png" />
+  </ItemGroup>
+
+</Project>
