@@ -17,7 +17,54 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate>
-                        
+                        <!-- 带有投影的外边框 -->
+                        <Border x:Name="Container" Padding="{Binding OutMarginSizeThickness, FallbackValue=10}">
+                            <!-- 主窗口轮廓 -->
+                            <Grid>
+                                
+                                <!-- 主窗口边框和投影 -->
+                                <Border CornerRadius="{Binding WindowCornerRadius, FallbackValue=10}"
+                                        Background="{Binding ForegroundLightBrush, FallbackValue=White}">
+                                    <Border.Effect>
+                                        <DropShadowEffect ShadowDepth="0" Opacity="0.2"/>
+                                    </Border.Effect>
+                                </Border>
+                                
+                                <!-- 主窗口内容 -->
+                                <Grid>
+                                    
+                                    <Grid.RowDefinitions>
+                                        
+                                        <!--标题栏-->
+                                        <RowDefinition Height="{Binding TitleHeightGridLength, FallbackValue=42}"/>
+                                        <!--投影-->
+                                        <RowDefinition Height="Auto"/>
+                                        <!--窗口内容-->
+                                        <RowDefinition Height="*"/>
+                                        
+                                    </Grid.RowDefinitions>
+
+                                    <Grid Grid.Row="0" Panel.ZIndex="1">
+
+                                        <Grid.ColumnDefinitions>
+                                            
+                                            <!-- 图标 -->
+                                            <ColumnDefinition Width="Auto"/>
+                                            <!-- 标题 -->
+                                            <ColumnDefinition Width="*"/>
+                                            <!-- 窗口按钮 -->
+                                            <ColumnDefinition Width="Auto"/>
+                                            
+                                        </Grid.ColumnDefinitions>
+
+                                        <Button Grid.Column="0" Command="{Binding MenuCommand}">
+                                            <Image Source="/Images/Logo/logo-small.png"/>
+                                        </Button>
+                                    </Grid>
+                                </Grid>
+
+                            </Grid>
+                        </Border>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
@@ -27,6 +74,7 @@
     <WindowChrome.WindowChrome>
         <WindowChrome ResizeBorderThickness="{Binding ResizeBorderThickness}"
                       CaptionHeight="{Binding TitleHeight}"
+                      CornerRadius="0"
                       GlassFrameThickness="0"/>
     </WindowChrome.WindowChrome>
 

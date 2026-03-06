@@ -57,6 +57,8 @@ namespace Fasetto.Word.ViewModel
 
         public int TitleHeight { get; set; } = 42;
 
+        public GridLength TitleHeightGridLength { get { return new GridLength(TitleHeight+ResizeBorder); } }
+
         #endregion
 
         #region Constructor
