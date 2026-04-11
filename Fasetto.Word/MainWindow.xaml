@@ -10,7 +10,7 @@
         WindowStartupLocation="CenterScreen"
         x:Name="AppWindow"
         Icon="/Images/Logo/logo-small.png"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Welcome, Friend!" Height="450" Width="800">
 
     <Window.Resources>
         <Style TargetType="{x:Type local:MainWindow}">
@@ -43,7 +43,7 @@
                                         <RowDefinition Height="*"/>
                                         
                                     </Grid.RowDefinitions>
-
+                                    <!-- 标题栏, Panel.ZIndex 控制标题栏层级，避免被内容遮挡 -->
                                     <Grid Grid.Row="0" Panel.ZIndex="1">
 
                                         <Grid.ColumnDefinitions>
@@ -57,9 +57,15 @@
                                             
                                         </Grid.ColumnDefinitions>
 
-                                        <Button Grid.Column="0" Command="{Binding MenuCommand}">
+                                        <!-- IsHitTestVisibleInChrome 保证标题栏内按钮可以正常响应点击事件 -->
+                                        <Button Grid.Column="0" Style="{StaticResource SystemIconButton}"  Command="{Binding MenuCommand}">
                                             <Image Source="/Images/Logo/logo-small.png"/>
                                         </Button>
+                                        
+                                        <!-- 标题 -->
+                                        <Viewbox Grid.Column="1">
+                                            <TextBlock Style="{StaticResource HeaderText}" Text="{Binding RelativeSource={RelativeSource Mode=TemplatedParent},Path=Title}"/>
+                                        </Viewbox>
                                     </Grid>
                                 </Grid>
 

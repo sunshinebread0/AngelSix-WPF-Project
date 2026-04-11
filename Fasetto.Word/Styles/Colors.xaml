@@ -3,7 +3,7 @@
 
 
     <Color x:Key="BackgroundLight">#efefef</Color>
-    <SolidColorBrush x:Key="BackfroundLightBrush" Color="{StaticResource BackgroundLight}"/>
+    <SolidColorBrush x:Key="BackgroundLightBrush" Color="{StaticResource BackgroundLight}"/>
     
     <Color x:Key="BackgroundVeryLight">#fafafa</Color>
     <SolidColorBrush x:Key="BackgroundVeryLightBrush" Color="{StaticResource BackgroundVeryLight}"/>

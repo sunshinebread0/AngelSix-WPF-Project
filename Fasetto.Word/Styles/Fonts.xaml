@@ -1,16 +1,20 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!--字体资源-->
     <FontFamily x:Key="LatoRegular">pack://application;,,,/Fonts/#Lato Regular</FontFamily>
     <FontFamily x:Key="LatoThin">pack://application;,,,/Fonts/#Lato Thin</FontFamily>
-
+    
+    <!--基础样式-->
     <Style TargetType="{x:Type Control}" x:Key="BaseStyle">
-        <Setter Property="FontFamily" Value="{DynamicResource LatoThin}"/>
+        <Setter Property="FontFamily" Value="{StaticResource LatoThin}"/>
     </Style>
 
+    <!--文本块不继承Control，所以单独设置一个Style-->
     <Style TargetType="{x:Type TextBlock}" x:Key="BaseTextBlockStyle">
         <Setter Property="FontFamily" Value="{StaticResource LatoThin}"/>
     </Style>
 
+    <!--基于基础样式的控件样式-->
     <Style TargetType="{x:Type Button}" BasedOn="{StaticResource BaseStyle}"/>
     <Style TargetType="{x:Type Label}" BasedOn="{StaticResource BaseStyle}"/>
     <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource BaseStyle}"/>

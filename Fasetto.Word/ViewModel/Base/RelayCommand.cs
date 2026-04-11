@@ -26,7 +26,7 @@ namespace Fasetto.Word
         public bool CanExecute(object? parameter)
             =>  true;
 
-        // 执行命令
+        // 执行命 令
         public void Execute(object? parameter)
             => _execute();
     }
