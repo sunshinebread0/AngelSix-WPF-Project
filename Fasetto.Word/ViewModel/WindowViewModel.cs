@@ -26,7 +26,17 @@ namespace Fasetto.Word.ViewModel
 
         #endregion
 
-        #region Properties
+        #region Public Properties
+
+        /// <summary>
+        /// 窗口的最小宽度
+        /// </summary>
+        public double WindowMinimumWidth { get; set; } = 400;
+
+        /// <summary>
+        /// 窗口的最小高度
+        /// </summary>
+        public double WindowMinimumHeight { get; set; } = 400;
 
         /// <summary>
         /// 窗口可调整大小的边框宽度。
@@ -39,6 +49,11 @@ namespace Fasetto.Word.ViewModel
         ///用于在保证拖拽区域的同时，叠加主窗口的外边距以实现更好的交互效果。
         /// </summary>
         public Thickness ResizeBorderThickness { get { return new Thickness(ResizeBorder+OutMarginSize); } }
+
+        /// <summary>
+        /// 主窗口内部内容的边距，等于调整大小边框宽度加上外边距尺寸，
+        /// </summary>
+        public Thickness InnerContentPadding { get { return new Thickness(ResizeBorder + OutMarginSize); } }
 
         /// <summary>
         /// 最外层Border的内边距，也就是主窗口的外边距。
@@ -96,7 +111,7 @@ namespace Fasetto.Word.ViewModel
 
         #endregion
 
-        #region
+        #region Commands
 
         /// <summary>
         /// 最小化命令
